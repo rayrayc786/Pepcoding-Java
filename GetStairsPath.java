@@ -21,6 +21,14 @@ public class Main {
             return ba;
         }
         ArrayList<String> mr=new ArrayList<>();
+//optimized code by two for loops
+//         for(int i=1;i<=3;i++){
+//             ArrayList<String> rr=getStairPaths(n-i);
+//             for(int j=0;j<rr.size();j++){
+//                 mr.add(i+rr.get(j));
+//             }
+//         }
+        
         ArrayList<String> rr1=getStairPaths(n-1);
         for(int i=0;i<rr1.size();i++){
             mr.add(1+rr1.get(i));
