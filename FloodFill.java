@@ -13,14 +13,14 @@ public class Main {
                 arr[i][j] = scn.nextInt();
             }
         }
-        boolean [][] visited=new boolean[n][n];
+        boolean [][] visited=new boolean[n][m];
         floodfill(arr,0,0,"",visited);
     }
 public static void floodfill(int[][] maze,int sr,int sc,String psf,boolean[][] visited) {
-    if(sr<0 || sr>maze.length-1 || sc<0 || sc>maze[0].length-1 || visited[sr][sc]==true || maze[sr][sc]==1){
+    if(sr<0 || sr>=maze.length || sc<0 || sc>=maze[0].length || visited[sr][sc]==true || maze[sr][sc]==1){
         return;
     }
-    if(sr==maze.length-1 && sc==maze.length-1){
+    if(sr==maze.length-1 && sc==maze[0].length-1){
         System.out.println(psf);
         return;
     }
