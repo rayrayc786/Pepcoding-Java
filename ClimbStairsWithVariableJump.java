@@ -31,5 +31,18 @@ public class Main {
         dp[src]=ans;
         return ans;
     }
+    public static int cst(int[] arr,int src){
+        int n=arr.length;
+        int[] dp=new int[n+1];
+        dp[n]=1;
+        for(int i=n-1;i>=0;i--){
+            for(int jump=1;jump<=arr[i];jump++){
+                if(i+jump<=n){
+                    dp[i]+=dp[i+jump];
+                }
+            }
+        }
+        return dp[0];
+    }
 
 }
