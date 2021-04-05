@@ -106,6 +106,29 @@ public class Main {
     System.out.println();
     }
   }
+  
+  //second approach
+  public static void levelOrderLinewise(Node node){
+    Node marker=new Node();
+    Queue<Node> q=new ArrayDeque<>();
+    q.add(node);
+    q.add(marker);
+    while(true){
+        if(q.size()==1){
+            break;
+        }
+        Node rn=q.remove();
+            if(rn==(marker)){
+                System.out.println();
+                q.add(marker);
+            }else{
+                System.out.print(rn.data+" ");
+                for(Node child:rn.children){
+                    q.add(child);
+                }
+            }
+   }
+}
 
   public static void main(String[] args) throws Exception {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
