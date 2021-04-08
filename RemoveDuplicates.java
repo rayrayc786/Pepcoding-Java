@@ -294,7 +294,19 @@ public class Main {
       this.head=ans.head;
       this.tail=ans.tail;
       this.size=ans.size;
-    }
+      //second approach
+//       Node t1=head;
+//       Node t2=head;
+//       while(t2!=null){
+//           if(t1.data==t2.data){
+//               t2=t2.next;
+//           }else{
+//               t1.next=t2;
+//               t1=t2;
+//           }
+//       }
+//       t1.next=null;
+      }
   }
 
   public static void main(String[] args) throws Exception {
