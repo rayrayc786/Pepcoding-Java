@@ -159,6 +159,20 @@ public class Main {
         node.children.remove(i+1);
     }
   }
+  //efficient approach O(n)
+  public static Node linearize2(Node node){
+        if(node.children.size()==0){
+            return node;
+        }
+        Node lkt=linearize2(node.children.get(node.children.size()-1));
+        while(node.children.size()>1){
+            Node last=node.children.remove(node.children.size()-1);
+            Node sl=node.children.get(node.children.size()-1);
+            Node slkt=linearize2(sl);
+            slkt.children.add(last);
+        }
+        return lkt;
+    }
 
   public static void main(String[] args) throws Exception {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
