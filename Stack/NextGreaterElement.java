@@ -49,4 +49,27 @@ public static void main(String[] args) throws Exception {
    }
    return nge;
  }
+  
+  //alternative solution by index approach from left to right
+  public static int[] solve(int[] arr){
+   Stack<Integer> st=new Stack<>();
+   int[] nge=new int[arr.length];
+   int i=0;
+   st.push(i);
+   while(i<arr.length){
+       while(st.size()>0 && arr[i]>arr[st.peek()]){
+           //pop all smaller elements and update ans 
+           nge[st.pop()]=arr[i];
+       }
+       //push current element into stack
+       st.push(i); 
+    i++;   
+   }
+   //pop all elements assign -1 value to them
+   while(st.size()!=0){
+           nge[st.pop()]=-1;
+       }
+   
+   return nge;
+ }
 }
