@@ -47,5 +47,12 @@ public static void main(String[] args) throws Exception {
         ans=Math.max(ans,a[i]*(nsr[i]-nsl[i]-1));
     }
     System.out.println(ans);
+  //alternative approach for max
+  //int maxArea=0;
+  //for(int i=0;i<a.length;i++){
+    //int width=nsr[i]-nsl[i]-1;
+    //int area=a[i]*width;
+    //if(maxArea<area){
+      //maxArea=area;}}
  }
 }
