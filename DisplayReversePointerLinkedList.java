@@ -383,7 +383,10 @@ public class Main {
           return;
       }
       reversePRHelper(node.next);
+      if(node==tail){
+      }else{
       node.next.next=node;
+      }
     }
 
     public void reversePR(){
